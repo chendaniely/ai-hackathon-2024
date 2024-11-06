@@ -1,0 +1,11 @@
+openai
+python-dotenv
+langchain
+langchain-openai
+requests
+chatlas @ git+https://github.com/cpsievert/chatlas
+
+openai-whisper
+ipykernel
+instaloader
+ffmpeg-python
