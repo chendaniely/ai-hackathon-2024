@@ -19,4 +19,6 @@ Provide the output in the following order: shopping list, ingredient list, cooki
 The text may be in different languages.
 Translate any non English text into English and return all the results in English.
 
+Provide the output in the JSON format so I can use the Notion API to create a new page with.
+
 Below are the video and text instructions.

@@ -9,3 +9,4 @@ openai-whisper
 ipykernel
 instaloader
 ffmpeg-python
+notion-client

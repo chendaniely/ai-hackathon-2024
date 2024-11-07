@@ -5,7 +5,17 @@ def extract_audio_from_video(video_path, audio_path):
     # Use ffmpeg to extract audio
     (
         ffmpeg.input(video_path)
-        .output(audio_path, vn=None)  # Exclude video stream
+        .output(
+            audio_path,
+            vn=None,  # Exclude video stream
+            loglevel="error",
+            **{
+                # Use 64k bitrate for smaller file
+                "b:a": "64k",
+                # Only output one channel, again for smaller file
+                "ac": "1",
+            },
+        )
         .run(overwrite_output=True)
     )
 
