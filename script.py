@@ -1,3 +1,5 @@
+from functions import *
+
 url = "https://www.instagram.com/reel/C_-tH8cPbyO/?utm_source=ig_web_copy_link"
 url = "https://www.instagram.com/reel/DAlnO4Rg4UQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="  # french
 shortcode = get_instagram_shortcode(url)
@@ -6,11 +8,17 @@ p_download_base = Path("ig_download")
 p_download = p_download_base / shortcode
 p_download
 
-download_ig(url, p_download_base)
-
+try:
+    download_ig(url, p_download_base)
+except FileExistsError:
+    pass
 
 p_audio = Path("ig_audio") / shortcode
-p_audio.mkdir(parents=True)
+
+try:
+    p_audio.mkdir(parents=True)
+except FileExistsError:
+    pass
 
 extract_audio_from_video(
     video_path=list(p_download.glob("*.mp4"))[0]._str,
@@ -18,7 +26,11 @@ extract_audio_from_video(
 )
 
 p_trans = Path("ig_trans") / shortcode
-p_trans.mkdir(parents=True)
+
+try:
+    p_trans.mkdir(parents=True)
+except FileExistsError:
+    pass
 
 transcribe_audio(
     input_audio_path=p_audio / "extracted.mp3",
