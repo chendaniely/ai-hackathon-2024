@@ -1,7 +1,8 @@
 from functions import *
 
-url = "https://www.instagram.com/reel/C_-tH8cPbyO/?utm_source=ig_web_copy_link"
-url = "https://www.instagram.com/reel/DAlnO4Rg4UQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="  # french
+# url = "https://www.instagram.com/reel/C_-tH8cPbyO/?utm_source=ig_web_copy_link"
+# url = "https://www.instagram.com/reel/DAlnO4Rg4UQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="  # french
+url = "https://www.instagram.com/reel/C2b5wEby-zB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="  # japanese
 shortcode = get_instagram_shortcode(url)
 
 p_download_base = Path("ig_download")
